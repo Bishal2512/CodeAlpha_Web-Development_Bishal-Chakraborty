@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Affordable and professional web design">
+    <meta name="keywords" content="web design, affordable web design, professional web design">
+    <meta name="author" content="Bishal Chakraborty">
+    <title>Vortex Web Design | About</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Vortex</span> Web Design</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="current"><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="newsletter">
+        <div class="container">
+            <h1>Subscribe To Our Newsletter</h1>
+            <form>
+                <input type="email" placeholder="Enter Email...">
+                <button type="submit" class="button_1">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="main">
+        <div class="container">
+            <article id="main-col">
+                <h1 class="page-title">About Us</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias et aspernatur maxime corrupti
+                    eaque! Laborum earum voluptates minus reiciendis dicta explicabo ipsam magni, fugiat veniam ea, est
+                    dolore magnam suscipit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere saepe quod consectetur dolor
+                    explicabo officia excepturi, dignissimos minima possimus in eum quaerat, aliquam ipsa culpa, sunt
+                    quis repellendus autem provident.</p>
+            </article>
+
+            <aside id="sidebar">
+                <div class="dark">
+                    <h3>What We Do</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis, accusamus. Consequuntur
+                        exercitationem soluta adipisci vero.</p>
+                </div>
+            </aside>
+        </div>
+        <div class="captcha">
+            <label for="captcha">Enter the captcha shown here:</label>
+            <input type="text" id="captchaInput" name="captchaInput" required>
+            <span id="captchaChallenge"></span>
+        </div>
+    </section>
+
+    <footer>
+        <p>Vortex Web Design, Copyright &copy; 2023</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var captchaChallenge = generateRandomChallenge(6); 
+            var captchaChallengeElement = document.getElementById("captchaChallenge");
+            captchaChallengeElement.textContent = captchaChallenge;
+
+            
+            var hiddenCaptchaField = document.createElement("input");
+            hiddenCaptchaField.type = "hidden";
+            hiddenCaptchaField.name = "captchaChallenge";
+            hiddenCaptchaField.value = captchaChallenge;
+            document.getElementById("surveyForm").appendChild(hiddenCaptchaField);
+        });
+
+        function generateRandomChallenge(length) {
+            var charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var challenge = "";
+            for (var i = 0; i < length; i++) {
+                challenge += charset.charAt(Math.floor(Math.random() * charset.length));
+            }
+            return challenge;
+        }
+    </script>
+
+</body>
+
+</html>
